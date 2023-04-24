@@ -1,0 +1,16 @@
+<aura:component controller = "AccC" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name = "accs" type = "Account[]"/>	
+    <aura:handler name = "init" value = "{!this}" action = "{!c.doInit}"/>
+    <lightning:card iconName = "standard:account" title="Acc">
+    	<div class = "slds-p-arround_medium">
+            <!-- Inserir a lista: faz isso com o mecanismo de "for"-->
+            <!--pesquise sobre Accordion-->
+        	<aura:iteration items = "{!v.accs}" var = "account">
+                <p></p>
+            	<p>{!account.name}</p>
+                <p>{!account.Rating}</p>
+                <p>{!account.Negocia_o__c}</p>      
+            </aura:iteration>
+        </div>   
+    </lightning:card>
+</aura:component>
