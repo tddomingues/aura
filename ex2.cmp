@@ -1,0 +1,17 @@
+<aura:component controller = "OppC" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name = "opps" type = "Opportunity[]"/>
+    <aura:handler name = "init" value = "{!this}" action = "{!c.doInit}"/>                                 
+    <lightning:card iconName = "standard:opportunity" title="Opp em Negociação">
+    	<div class = "slds-p-arround_medium">
+            <!-- Inserir a lista: faz isso com o mecanismo de "for"-->
+            <!--pesquise sobre Accordion-->
+        	<aura:iteration items = "{!v.opps}" var = "opportunity">
+            	<p>{!opportunity.Name}</p>
+                <p>{!opportunity.amount}</p>
+                <p>{!opportunity.stagename}</p>
+                <p>{!opportunity.closeDate}</p>       
+            </aura:iteration>
+        </div>
+    
+    </lightning:card>
+</aura:component>
