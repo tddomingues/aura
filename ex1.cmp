@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:card title="Criar Lead">
+        <div class="slds-p-horizontal_small">
+    		<lightning:recordEditForm aura:id="recordEditForm" objectApiName="Lead" onsuccess="{!c.showToast}">
+                <lightning:inputField fieldName="AccountId" aura:id="field"/>
+                <lightning:inputField fieldName="Name" aura:id="field"/>
+                <lightning:inputField fieldName="Status" aura:id="field"/>
+                <lightning:inputField fieldName="Company" aura:id="field"/>
+                <lightning:button class="slds-m-top_small" type="submit1" label="Criar Lead" onclick = "{!c.showToast}"/> 
+            </lightning:recordEditForm>   
+            <lightning:button class="slds-m-top_small" type="submit1" label="Resetar" onclick = "{!c.handleReset}"/> 
+        </div>
+    </lightning:card>
+</aura:component>
